@@ -109,6 +109,7 @@ class Boot {
 			Menu(Loc("User Info",                   "user" :: "info" :: Nil, "User Info",                                 signOutIfRestricted, signedIn)) ::
 			Menu(Loc("User Preferences",            "user" :: "preferences" :: Nil, "User Preferences",                   signOutIfRestricted, signedIn)) ::
 			Menu(Loc("User Services",               "user" :: "services" :: Nil, "User Services",                         signOutIfRestricted, signedIn)) ::
+			Menu(Loc("Wiki Resize",                 "wiki" :: "frame-resize" :: Nil, "Wiki Resize",                       signOutIfRestricted)) ::
 			Menu(Loc("Wiki Home",                   "wiki" :: "index" :: Nil, "Wiki Home",                                signOutIfRestricted)) ::
 			Nil
 		LiftRules.setSiteMap(SiteMap(entries:_*))

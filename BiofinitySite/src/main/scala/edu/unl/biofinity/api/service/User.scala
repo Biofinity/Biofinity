@@ -29,11 +29,13 @@ object User {
 		val event: Model.Event = Model.Event.find(S.param("ID") openOr -1) openOr null
 
 		if (Model.User.signedIn_?) {
+			var group = if (Model.User.currentGroup.is == null) "-1" 
+				else Model.User.currentGroup.is.entityID.is.toString
 			Full(
 				XmlResponse(
 <User>
 	<ID>{Model.User.currentUser.is.entityID.is.toString}</ID>
-	<Group>{Model.User.currentGroup.is.entityID.is.toString}</Group>
+	<Group>{group}</Group>
 </User>
 				)
 			)

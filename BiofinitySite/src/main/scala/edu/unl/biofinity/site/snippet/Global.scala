@@ -179,11 +179,10 @@ class Global {
 					wikiBaseURL + "?mode=view&pageid=" + pageId
 				else 
 					wikiBaseURL
-
-			<iframe id="WikiFrame" src={url} scrolling="yes" frameborder="0" style="overflow: visible; width: 100%; height: 800px;" />
+			<iframe id="WikiFrame" name="WikiFrame" src={url} scrolling="no" width="100%" frameborder="0" />
 		} else {
 			val wikiSearchURL = wikiBaseURL + searchParams
-			<iframe id="WikiFrame" src={wikiSearchURL} scrolling="yes" frameborder="0" style="overflow: visible; width: 100%; height: 800px;" />
+			<iframe id="WikiFrame" name="WikiFrame" src={wikiSearchURL} scrolling="no" width="100%" frameborder="0" />
 		}
 	}
 }
