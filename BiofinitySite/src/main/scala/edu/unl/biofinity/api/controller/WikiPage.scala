@@ -22,7 +22,7 @@ object WikiPage {
 		
 		try {
 			val client = new HttpClient();
-			val method = new PutMethod("http://localhost:8080/BiofinityWikiServer/resources/datapages");
+			val method = new PutMethod("http://localhost/BiofinityWikiServer/resources/datapages");
 			
 			val request = new StringRequestEntity(xml, null, "UTF-8")
 			method.setRequestEntity(request)

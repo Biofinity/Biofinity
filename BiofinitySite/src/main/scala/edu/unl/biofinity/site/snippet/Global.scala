@@ -168,7 +168,7 @@ class Global {
 	def renderWikiFrame(xhtml: NodeSeq): NodeSeq = {
 		val query = S.param("search-query") openOr ""
 		val pageId = S.param("WikiPageID") openOr ""
-		val host = S.hostName + ":8080"
+		val host = S.hostName
 		val path = "/BiofinityWiki"
 		val searchParams = "?mode=search&terms=" + query
 		val wikiBaseURL = "http://" + host + path

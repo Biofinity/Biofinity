@@ -97,7 +97,7 @@ object Authentication {
 			}
 		}
 		
-		val host = S.hostName + ":8080"
+		val host = S.hostName
 		val getMethod = new GetMethod("http://" + host + "/BiofinityWikiServer")
 		val client = new HttpClient()
 		client.executeMethod(getMethod)
@@ -116,7 +116,7 @@ object Authentication {
 		Model.User.currentUser(null)
 		Model.User.currentGroup(null)
 
-		val host = S.hostName + ":8080"
+		val host = S.hostName
 		val getMethod = new GetMethod("http://" + host + "/BiofinityWikiServer")
 		val client = new HttpClient()
 		client.executeMethod(getMethod)
