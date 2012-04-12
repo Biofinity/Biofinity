@@ -82,6 +82,9 @@ class Boot {
 			Menu(Loc("HDZ Ampibian Create",         "HDZ" :: "amphibian" :: "create" :: Nil, "HDZ Ampibian Create",       signOutIfRestricted, signedIn)) ::
 			Menu(Loc("HDZ Ampibian Home",           "HDZ" :: "amphibian" :: "index" :: Nil, "HDZ Ampibian Home",          signOutIfRestricted)) ::
 			Menu(Loc("HDZ Ampibian Success",        "HDZ" :: "amphibian" :: "success" :: Nil, "HDZ Ampibian Success",     signOutIfRestricted, signedIn)) ::
+                        Menu(Loc("HDZ Butterfly Create",        "HDZ" :: "butterfly" :: "create" :: Nil, "HDZ Butterfly Create",      signOutIfRestricted, signedIn)) ::
+			Menu(Loc("HDZ Butterfly Home",          "HDZ" :: "butterfly" :: "index" :: Nil, "HDZ Butterfly Home",         signOutIfRestricted)) ::
+			Menu(Loc("HDZ Butterfly Success",       "HDZ" :: "butterfly" :: "success" :: Nil, "HDZ Butterfly Success",    signOutIfRestricted, signedIn)) ::
 			Menu(Loc("Info Additional",             "info" :: "additional" :: Nil, "Additional Info",                     signOutIfRestricted)) ::
 			Menu(Loc("Info BioBlitz",               "info" :: "bioblitz" :: Nil, "BioBlitz",                              signOutIfRestricted)) ::
 			Menu(Loc("Info Framework",              "info" :: "framework" :: Nil, "Framework",                            signOutIfRestricted)) ::

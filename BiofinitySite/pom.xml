@@ -18,12 +18,18 @@
 		<maven.scaladoc.vscaladocVersion>1.2-m1</maven.scaladoc.vscaladocVersion>
 		<vscaladoc.links.liftweb.pathsufix>scaladocs/</vscaladoc.links.liftweb.pathsufix>
 		<vscaladoc.links.liftweb.baseurl>http://scala-tools.org/mvnsites/liftweb</vscaladoc.links.liftweb.baseurl>
+	 <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 	</properties>
 	<repositories>
 		<repository>
 			<id>scala-tools.releases</id>
 			<name>Scala-Tools Dependencies Repository for Releases</name>
 			<url>http://scala-tools.org/repo-releases</url>
+		</repository>
+		<repository>
+			<id>cig-repo</id>
+			<name>CIG Repository</name>
+			<url>http://almas.unl.edu:8083/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>

@@ -1,0 +1,206 @@
+<lift:surround with="full_page">
+	<lift:with-param name="main_content">
+		<lift:HDZ_BF.initCreateOccurrence />
+		<head>
+			<title>Henry Doorly Zoo Butterfly Database - The Biofinity Project</title>
+			<link rel="stylesheet" type="text/css" href="/resources/css/data.css" />
+			<link rel="stylesheet" type="text/css" href="/resources/css/lab.css" />
+			<script type="text/javascript" src="/resources/scripts/model/Location.js"></script>
+		</head>
+		<lift:Location.renderScripts />
+	</lift:with-param>
+	
+	<lift:with-param name="primary_content">
+		<lift:User.renderIfNotRestricted>
+			<h2>Add a new butterfly collection event to the Henry Doorly Zoo's Butterfly Database</h2>
+			<span style="color: red;">* denotes required information</span>
+			<lift:HDZ_BF.renderCreateOccurrence>
+				<br />
+				<div class="section_head">Tell us about your school</div>
+				<table>
+					<tr>
+						<td>
+							* School: 
+						</td>
+						<td>
+							<butterfly:School />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							* Teacher's Name: 
+						</td>
+						<td>
+							<butterfly:TeacherName />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							* Teacher's Email: 
+						</td>
+						<td>
+							<butterfly:TeacherEmail />
+						</td>
+					</tr>
+				</table>
+				<div class="section_head">Tell us when counted the butterflies</div>
+				<lift:Event.renderEvent updateExplicit="">
+					<table>
+						<tr>
+							<td>
+								* Date:
+							</td>
+							<td>
+								<event:Date /><span>&nbsp;&nbsp;MM/DD/YYYY</span>&nbsp;&nbsp;<event:Hour />&nbsp;&nbsp;<event:Minute />&nbsp;&nbsp;<event:PM />
+							</td>
+						</tr>
+                                                <tr>
+							<td>
+								End Time:
+							</td>
+							<td>
+								<butterfly:EndTime />
+							</td>
+						</tr>
+					</table>
+					<br />
+				</lift:Event.renderEvent>                                
+				<div class="section_head">Tell us about where you counted the butterflies</div>
+				<lift:Location.renderLocation updateExplicit="">
+					<p>
+						<span><b>Drag the marker</b> on the map to automatically set the latitude and longitude of this location.</span>
+					</p>
+					<table>
+						<tr>
+							<td>
+								<b>Latitude</b><sup><a class="reference" target="_blank" href="http://rs.tdwg.org/dwc/terms/index.htm#decimalLatitude">[*]</a></sup>:
+							</td>
+							<td>
+								<location:Latitude />&#176;<span>&nbsp;Expressed in <a href="http://en.wikipedia.org/wiki/Decimal_degrees">decimal degrees (DD)</a>, ranging from -90.0 to 90.0.</span>  Alternatively, use <a href="http://en.wikipedia.org/wiki/Geographic_coordinate_system">degrees:minutes:seconds (DMS)</a>:
+							</td>
+						</tr>
+						<tr>
+							<td>
+			
+							</td>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<location:LatitudeDMSDegrees />&#176;&nbsp;&nbsp;<location:LatitudeDMSMinutes />'&nbsp;&nbsp;<location:LatitudeDMSSeconds />"&nbsp;&nbsp;<location:LatitudeDMSDirection />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>Longitude</b><sup><a class="reference" target="_blank" href="http://rs.tdwg.org/dwc/terms/index.htm#decimalLongitude">[*]</a></sup>:
+							</td>
+							<td>
+								<location:Longitude />&#176;<span>&nbsp;Expressed in <a href="http://en.wikipedia.org/wiki/Decimal_degrees">decimal degrees (DD)</a>, ranging from -180.0 to 180.0.</span>  Alternatively, use <a href="http://en.wikipedia.org/wiki/Geographic_coordinate_system">degrees:minutes:seconds (DMS)</a>:
+							</td>
+						</tr>
+						<tr>
+							<td>
+			
+							</td>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<location:LongitudeDMSDegrees />&#176;&nbsp;&nbsp;<location:LongitudeDMSMinutes />'&nbsp;&nbsp;<location:LongitudeDMSSeconds />"&nbsp;&nbsp;<location:LongitudeDMSDirection />
+							</td>
+						</tr>
+					</table>
+					<div style="margin-top: 10px; height: 300px;" id="map_canvas"></div>
+					<lift:Map.renderMap />
+					<lift:Map.renderMarker centerMap="" draggable="" latitude="41.52" longitude="-99.41" />
+					<lift:Map.setZoom zoom="7" />
+					<p>
+						<span><b><u><location:LookupLocationLink>Lookup location details</location:LookupLocationLink></u></b> such as elevation, municipality, county, state/province, and country based on the current latitude and longitude.</span>
+					</p>
+					<div style="display:none">
+						<location:Country /><location:Municipality />
+					</div>
+					<table>
+						<tr>
+							<td>
+								* State:
+							</td>
+							<td>
+								<location:StateProvince />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								* County:
+							</td>
+							<td>
+								<location:County />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Locality (remarks, landmarks):
+							</td>
+							<td>
+								<location:Locality /><span>&nbsp;&nbsp;The specific description of the place.  More specific than city, county, etc.</span><br />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								* Habitat:
+							</td>
+							<td>
+								<butterfly:Habitat /><span>&nbsp;&nbsp;A category or description of the habitat the butterflies were observed in.</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Air Temperature:
+							</td>
+							<td>
+								<butterfly:AirTemperature /><span>&nbsp;&deg; C&nbsp;<b>(degrees Celsius)</b></span>
+							</td>
+						</tr>
+					</table>
+					<br />
+					<div>What was the weather like when you counted the butterflies?</div>
+					<br />
+					<table>
+						<tr>
+							<td>
+								Sky:
+							</td>
+							<td>
+                                                            <butterfly:Sky/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Wind:
+							</td>
+							<td>
+                                                            <butterfly:Wind/>
+                                                        </td>
+						</tr>
+					</table>
+					<p>
+						<span>If any additional details are necessary to describe this location, provide them below. It is OK to leave this blank.</span><br />
+						<location:Remarks />
+					</p>
+				</lift:Location.renderLocation>
+                                <div class="section_head">Tell us about the butterflies you counted</div>
+                                <butterfly:Classifications>
+                                    <table style="width: 70%">
+                                        <tr>
+                                            <th>Classification</th>
+                                            <th>Total Observed</th>
+                                        </tr>
+                                        <Classification:List>
+                                            <tr>
+                                                <td><Classification:Class/></td>
+                                                <td><Classification:Count/></td>
+                                            </tr>
+                                        </Classification:List>
+                                    </table>
+                                </butterfly:Classifications>   
+                                <br/>   
+                                <span>Note, the save operation may take a moment, you will be notified if an error occurrs, only click the save button once</span>
+				<br/><butterfly:Save />
+			</lift:HDZ_BF.renderCreateOccurrence>                        
+		</lift:User.renderIfNotRestricted>
+	</lift:with-param>
+</lift:surround>
